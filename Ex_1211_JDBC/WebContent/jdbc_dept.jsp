@@ -55,6 +55,32 @@
 		<title>Insert title here</title>
 	</head>
 	<body>
-	
+		<table border="1">
+		<caption> </caption>
+		<tr>
+			<th>번호</th>
+			<th>부서명</th>
+			<th>위치</th>
+		</tr>
+			<% for(int i = 0; i< dept_list.size(); i++ ){
+				DeptVO vo = dept_list.get(i); 
+			%>
+			<tr>
+				<td><%=vo.getDeptno()%></td>
+				<td><%=vo.getDname()%></td>
+				<td><%=vo.getLoc()%></td>
+			</tr>
+			<%} %>
+		</table>
 	</body>
 </html>
+
+
+
+
+
+
+
+
+
+
