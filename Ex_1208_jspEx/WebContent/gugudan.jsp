@@ -14,9 +14,23 @@
 		<% for(int i=1;i<=9;i++){ %>
 			<%= "<tr>" %>
 			<% for(int j=2;j<=9;j++){ %>
-				<%= "<th>" %>
+				<%= "<td>" %>
 				<%= j + " * " + i + " = " + i*j %>	
-				<%= "</th>" %>
+				<%= "</td>" %>
+			<% } %>	
+			<%= "</tr>" %>
+		<% } %>	
+		</table>
+		
+		<table border="1">
+			<caption>구구단</caption>
+		<% for(int i=1;i<=9;i++){ %>
+			<tr>
+			<% for(int j=2;j<=9;j++){ %>
+				<td>
+				<% String str = String.format("%d x %d = %d",j,i,j*i);%>	
+				<%= str %>
+				</td>
 			<% } %>	
 			<%= "</tr>" %>
 		<% } %>	
