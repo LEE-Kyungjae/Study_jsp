@@ -6,8 +6,7 @@
     
 <% 
 	DeptDAO dao = DeptDAO.getInstance();//DAO객체 생성 
-	List<DeptVO> dlist = dao.selectList(); 
-	
+	List<DeptVO> dlist = dao.selectList();
 %>
 
 <!DOCTYPE html>
