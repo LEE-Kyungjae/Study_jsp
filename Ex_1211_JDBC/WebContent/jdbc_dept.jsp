@@ -53,8 +53,18 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
+		<script>
+			function send(data){
+				//alert(data);
+			let f = document.getElementById("m_form");
+			f.action= "sawon_list.jsp";
+			f.deptno.value = data;
+			f.submit();
+			}
+		</script>
 	</head>
 	<body>
+		<form id="m_form">
 		<table border="1">
 		<caption> </caption>
 		<tr>
@@ -67,20 +77,14 @@
 			%>
 			<tr>
 				<td><%=vo.getDeptno()%></td>
-				<td><%=vo.getDname()%></td>
+				<td>
+				<a href="#" onclick="send('<%=vo.getDeptno()%>');"><%=vo.getDname()%></a>
+				</td>
 				<td><%=vo.getLoc()%></td>
 			</tr>
 			<%} %>
 		</table>
+		<input name = "deptno" value="" type="hidden">		
+		</form>
 	</body>
 </html>
-
-
-
-
-
-
-
-
-
-
