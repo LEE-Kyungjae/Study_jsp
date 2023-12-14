@@ -1,4 +1,4 @@
-<%@page import="dvo.SjDAO"%>
+<%@page import="dao.SjDAO"%>
 <%@page import="vo.SjVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
