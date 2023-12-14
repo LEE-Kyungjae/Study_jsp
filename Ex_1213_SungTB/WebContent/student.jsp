@@ -21,6 +21,11 @@
 				}				
 				location.href="sung_del.jsp?no="+no;
 			}
+			function update(f){
+				//location.href = "sung_update_form.jsp?no="+no+"&name="+name;
+				f.action="sung_update_form.jsp";
+				f.submit();
+			}
 		</script>
 	</head>
 	<body>
@@ -50,8 +55,24 @@
 				<td><%=vo.getTot()%></td>
 				<td><%=vo.getAvg()%></td>
 				<td><%=vo.getRank()%></td>
-				<td><input type="button" value="삭제" onclick="del('<%=vo.getNo()%>')"></td>
-			</tr>
+				<td>
+				<form>
+				<input type="hidden" name="no" value="<%=vo.getNo()%>">
+				<input type="hidden" name="name" value="<%=vo.getName()%>">
+				<input type="hidden" name="kor" value="<%=vo.getKor()%>">
+				<input type="hidden" name="eng" value="<%=vo.getEng()%>">
+				<input type="hidden" name="mat" value="<%=vo.getMat()%>">
+				<input type="button" value="삭제" onclick= "del('<%=vo.getNo()%>')">
+				<input type="button" value="수정" onclick= "update(this.form);">
+				</form>
+				<%-- <td><input type="button" value="수정" onclick="update(
+						'<%=vo.getNo()%>',
+						'<%=vo.getName()%>',
+						'<%=vo.getKor()%>',
+						'<%=vo.getEng()%>',
+						'<%=vo.getMat()%>');"></td>--%>
+			</tr> 
+			</td>
 		<% } %>	
 			<tr>
 				<td colspan="9">

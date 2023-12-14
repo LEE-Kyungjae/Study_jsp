@@ -42,7 +42,7 @@
 	</head>
 	<body>
 		<form method = "post">
-			<table>
+			<table border="1">
 				<caption>학생추가</caption>
 				<tr>
 					<th>이름</th>
