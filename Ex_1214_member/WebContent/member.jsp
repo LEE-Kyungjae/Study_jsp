@@ -29,7 +29,7 @@
 			location.href="member_del.jsp?idx="+idx;
 		}
 		function update(){
-			location.href="member_update.jsp?idx="+idx;
+			location.href="member_update.jsp?idx="+idx+"?action=update";
 		}
 	
 	</script>

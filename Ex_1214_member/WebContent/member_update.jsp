@@ -11,7 +11,7 @@
 	String pwd = request.getParameter("pwd");
 	String email = request.getParameter("email");
 	String addr = request.getParameter("addr");
-	String action =request.getParameter("action");
+		
 	// request로 받아온 네 개의 파라미터 정보를 vo로 묶자
 	MemberVO vo = new MemberVO();
 	vo.setName(name);
@@ -19,12 +19,6 @@
 	vo.setPwd(pwd);
 	vo.setEmail(email);
 	vo.setAddr(addr);
-	
-	if(action.equals("insert")){
-	MemberDAO.getInstance().insert(vo);	
-	}
-	if(action.equals("update")){
-	MemberDAO.getInstance().update(vo);	
-	}
+	MemberDAO.getInstance().update(vo);
 	response.sendRedirect("member.jsp");
 	%>
