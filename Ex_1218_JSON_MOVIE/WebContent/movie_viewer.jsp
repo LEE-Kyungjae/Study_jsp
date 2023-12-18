@@ -6,13 +6,11 @@
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
 		<script src = "js/httpRequest.js"></script>
-		
 		<script>
 		window.onload = function(){
 			//현재 페이지 호출시 가장 먼저 실행되는 영역
 			let url = "movie_list_json.jsp";
 			sendRequest(url, null, resMovie, "get");
-			
 			//콜백메서드
 			function resMovie(){
 				if(xhr.readyState == 4 && xhr.status == 200){
@@ -34,12 +32,16 @@
 					}//f
 				}//i
 			}//F resMovie
-	
-			
 		}	
 		function movie_play(){
+			//현재 선택된 option의 value값을 가져온다
+			let path = document.getElementById("movie_select").value;
+			let my_video = document.getElementById("my_video");
+			my_video.src = path;
+			//alert(path);
+			my_video.play();
 		}
-		</script>
+		</script> 
 	</head>
 	<body>
 		<select id="movie_select" onchange="movie_play();">

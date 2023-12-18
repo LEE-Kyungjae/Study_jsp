@@ -55,6 +55,7 @@ JSON(JavaScript Object Notation)표기법:
 			document.write("<br>");
 			document.write("학생명 : " + course.student[0].name + "/"+
 					course.student[0].age);
+			
 		</script>
 	
 	</head>
