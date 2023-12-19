@@ -38,7 +38,7 @@
 			//아이디 중복체크를 위한 Ajax
 			let url = "check_id.do"
 			let param = "id="+id;
-			sendRequest(url, param, resultFn, "get");
+			sendRequest(url, param, resultFn2, "get");
 			}//F check_id
 			
 			function resultFn(){

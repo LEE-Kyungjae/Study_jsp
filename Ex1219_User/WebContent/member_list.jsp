@@ -8,6 +8,22 @@
 		<title>Insert title here</title>
 		<!-- Ajax사용을 위한 준비 -->
 		<script src="js/httpRequest.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			function del(idx){
+				if(!confirm("정말로 삭제하시겠습니까?")){
+					return;
+				}
+				let url = "delete.do"
+				let param = "idx="+idx;
+				sendRequest(url, param, resultFn, "get");
+			}
+			function resultFn(){
+				if(xhr.readyState==4 && xhr.status == 200){
+					alert("정상적으로 삭제되었습니다");
+					location.reload();
+				}
+			}//F resultFn
+		</script>
 	</head>
 	<body>
 		<table border = "1">
