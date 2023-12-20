@@ -1,0 +1,10 @@
+.metadata
+Servers/
+.settings/
+build/
+src/
+META-INF/
+WEB-INF/
+.classpath
+.project
+JDS/
