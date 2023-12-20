@@ -7,6 +7,7 @@
 		<title>Insert title here</title>
 	</head>
 	<body>
-		
+		제목 : ${ title }<br>
+		<img src="upload/${filename}">
 	</body>
 </html>
