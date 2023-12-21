@@ -38,20 +38,22 @@
 			//아이디 중복체크를 위한 Ajax
 			let url = "check_id.do"
 			let param = "id="+id;
-			sendRequest(url, param, resultFn2, "get");
+			sendRequest(url, param, resultFn2, "POST");
 			}//F check_id
 			
-			function resultFn(){
+			function resultFn2(){
 				if(xhr.readyState==4 && xhr.status == 200){
+					console.log(typeof(xhr.responseJSON));
+					let json =new Function("return "+xhr.responseJSON);
 					//data = "[{'result':'%s'},{'id':'%s'}]"
-					let data = xhr.responseText;
+					//let data = xhr.responseText;
 					//let json = (new Function(data));
-					let json = eval(data);
-					if(json[0].result == 'no' ){
+					//let json = eval(data);
+					if(json.result == 'no' ){
 						alert(json[1].id+"는 이미 사용중입니다");
 						return;
 					}
-					alert(json[1].id+"는 사용 가능합니다");
+					alert(json.id+"는 사용 가능합니다");
 					b_idCheck = true;
 				}
 			}//F resultFn

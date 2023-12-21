@@ -19,12 +19,13 @@
 			}
 			function resultDel(){
 				if(xhr.readyState==4 && xhr.status == 200){
-					let data = xhr.responseText;
-					let json = (new Function('return '+data))();
-					alert(json[0].param);
+					console.log(typeof(xhr.responseText));
+					//let data = xhr.responseText;
+					//let json = (new Function('return '+data))();
+					//alert(json[0].param);
 					//alert("정상적으로 삭제되었습니다");
 					//location.reload();
-					location.href="member_list.do";
+					//location.href="member_list.do";
 				}
 			}//F resultFn
 			function update(idx){
@@ -35,7 +36,7 @@
 			function resultUd(){
 				if(xhr.readyState ==4 && xhr.status ==200){
 					let data = xhr.responseText;
-					let json = (new Function('return '+data))();
+					let json = (new Function('return '+data+ ";"))();
 					//let json2 = JSON.parse(data);
 					//엄밀히 말하면 json객체로 받는방식이 아니고 object type으로 data를 받는과정이다.
 					//json형태로 받기위해서는 JSON.parse()를 사용하면 된다.
