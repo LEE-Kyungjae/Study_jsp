@@ -1,10 +1,9 @@
 .metadata
 Servers/
-.settings/
+JDS/
+test/
 build/
-src/
-META-INF/
-WEB-INF/
+.settings/
 .classpath
 .project
-JDS/
+MANIFEST.MF
