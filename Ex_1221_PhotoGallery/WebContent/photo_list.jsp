@@ -38,6 +38,12 @@
 					showdiv.style.display="none";
 				}
 			}
+			
+			function download(filename){
+				location.href="download.do?dir=/upload/&filename="+filename;
+				
+			}
+			
 		</script>
 	</head>
 	<body>
@@ -58,8 +64,9 @@
 							<input type ="hidden" name="idx" value="${vo.idx}">
 							<input type ="hidden" name="pwd" value="${vo.pwd}">
 							<div>
-								<input type="password" name="pwd2" size="11">
+								<input type="password" name="pwd2" size="5">
 								<input type="button" value="삭제" onclick="del(this.form);">
+								<input type="button" value="down" onclick="download('${vo.filename}');">
 							</div>
 						</form>
 					</div>
