@@ -18,9 +18,21 @@ public class GogekListAct extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//고객 목록 가져오기
-		List<GogekVO> list = GogekDAO.getInstance().selectGogek();
-	
+		String search="all";
+		String str_goaddr = request.getParameter("search");
+		//파라미터가 정상적으로 넘어온 경우
+		if(str_goaddr!=null && !str_goaddr.isEmpty()) {
+			search = str_goaddr;
+		}
+		List<GogekVO> list =null;
+		
+		//고객목록 가져오기
+		if(search.equalsIgnoreCase("all")){
+		list = GogekDAO.getInstance().selectGogek();
+		}else {
+		list = GogekDAO.getInstance().selectGogek(search);
+		}
+		
 		request.setAttribute("list",list);
 		RequestDispatcher disp = request.getRequestDispatcher("gogek_list.jsp");
 		disp.forward(request, response);

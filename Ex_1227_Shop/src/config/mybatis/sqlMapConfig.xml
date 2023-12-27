@@ -13,8 +13,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		</environment>
 	</environments>
 	<mappers>
-		<mapper resource="config/mybatis/mapper/dept.xml" />
-		<mapper resource="config/mybatis/mapper/gogek.xml" />
-		<mapper resource="config/mybatis/mapper/sawon.xml" />
+		<mapper resource="config/mybatis/mapper/product.xml" />
 	</mappers>
 </configuration>

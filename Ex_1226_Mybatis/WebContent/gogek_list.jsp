@@ -7,7 +7,18 @@
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
 	</head>
+	<script type="text/javascript">
+		function search(){
+			let search = document.getElementById("search").value;
+			location.href="gogek.do?search="+encodeURIComponent(search);
+		}
+	</script>
 	<body>
+		<div align="center">
+			지역<input id="search">
+			<input type="button" value="검색" onclick="search();">		
+		</div>
+		<hr>
 		<table border="1" align="center">
 			<caption>고객 목록</caption>
 			<tr>

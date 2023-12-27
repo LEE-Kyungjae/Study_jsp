@@ -6,4 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="gogek_list" resultType="vo.GogekVO">
 		select * from gogek
 	</select>
+	<select id="gogek" resultType="vo.GogekVO" parameterType="String">
+		select * from gogek where goaddr like '%'||#{goaddr}||'%'
+	</select>
 </mapper>
