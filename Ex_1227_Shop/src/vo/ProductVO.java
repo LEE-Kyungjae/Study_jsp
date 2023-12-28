@@ -1,9 +1,17 @@
 package vo;
 
 public class ProductVO {
-	private int idx, p_price, p_saleprice;
+	private int idx, p_price, p_saleprice, sale_rate;
 	private String category,p_num,p_name,p_company,p_image_s,p_image_l,p_content,p_date;
-	
+
+	public int getSale_rate() {
+		//상품의 할인율 계산
+		//(정가-할인가)/정가*100
+		if(p_price==0) {
+			return 0;
+		}
+		return(int)((p_price -p_saleprice)/(float)p_price*100);
+	}
 	public int getIdx() {
 		return idx;
 	}

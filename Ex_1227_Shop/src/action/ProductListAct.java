@@ -14,7 +14,7 @@ import dao.ProductDAO;
 import vo.ProductVO;
 
 @WebServlet("/list.do")
-public class GogekListAct extends HttpServlet {
+public class ProductListAct extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -26,7 +26,6 @@ public class GogekListAct extends HttpServlet {
 		if(category == null || category.isEmpty()) {
 			category = "com001";// 첫실행시 보여질 카테고리는 컴퓨터 카테고리
 		}
-		
 		list = ProductDAO.getInstance().select(category);
 		//DB조회
 		request.setAttribute("list", list);
