@@ -4,8 +4,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="vo.ProductVO" alias="pro"/>
-		<typeAlias type="vo.CartVO" alias="cart"/>
+		<!-- <typeAlias type="vo.ProductVO" alias="pro"/> -->
+		<typeAlias type="vo.BoardVO" alias="board"/>
 	</typeAliases>
 	<environments default="">
 		<environment id="">
@@ -17,7 +17,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		</environment>
 	</environments>
 	<mappers>
-		<mapper resource="config/mybatis/mapper/product.xml" />
-		<mapper resource="config/mybatis/mapper/cart.xml" />
+		<mapper resource="config/mybatis/mapper/board.xml" />
 	</mappers>
 </configuration>

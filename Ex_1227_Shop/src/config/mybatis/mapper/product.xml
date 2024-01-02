@@ -25,5 +25,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="product_one" resultType="pro" parameterType="int">
 		select * from product where idx=#{idx}
 	</select>
-	
+	<select id="">
+	</select>
 </mapper>
