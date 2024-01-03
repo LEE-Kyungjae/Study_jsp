@@ -32,11 +32,23 @@
 					<td>
 						<c:forEach begin="1" end="${vo.depth}">&nbsp;</c:forEach>
 						<c:if test="${vo.depth ne 0}">ㄴ</c:if>
+						<c:if test="${vo.del_info eq 0 }">
 						<a href="view.do?idx=${vo.idx}">
 							${vo.subject}
 						</a>
+						</c:if>
+						<c:if test="${vo.del_info eq -1}">
+							<font color="gray">
+								삭제된 게시글 입니다
+							</font>
+						</c:if>
 					</td>
-					<td align="center">${vo.name}</td>
+					<c:if test="${vo.del_info eq 0 }">
+						<td align="center">${vo.name}</td>
+					</c:if>
+					<c:if test="${vo.del_info eq -1 }">
+						<td align="center">unknown</td>
+					</c:if>
 					<td align="center">${vo.regdate}</td>
 					<td align="center">${vo.readhit}</td>
 				</tr>

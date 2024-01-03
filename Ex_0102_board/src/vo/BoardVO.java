@@ -1,9 +1,15 @@
 package vo;
 
 public class BoardVO {
-	private int idx, readhit, ref, step, depth;
-	private String name, subject,content,pwd,ip,regdate;
+	private int idx, readhit, ref, step, depth, del_info;
+	private String name, subject, content, pwd, ip, regdate;
 	
+	public int getDel_info() {
+		return del_info;
+	}
+	public void setDel_info(int del_info) {
+		this.del_info = del_info;
+	}
 	public int getIdx() {
 		return idx;
 	}
@@ -70,4 +76,6 @@ public class BoardVO {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
+	
+	
 }

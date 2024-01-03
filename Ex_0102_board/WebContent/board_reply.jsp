@@ -10,7 +10,7 @@
 			function senc_check(  ){
 				let f = document.f;
 				
-				//유효성 체크 했다고 쳐
+				//유효성 체크 했다 가정
 				
 				f.submit();
 			}
@@ -19,9 +19,12 @@
 	</head>
 	
 	<body>
-		<form name="f" method="post" action="insert.do">
+		<form name="f" method="post" action="reply.do">
+		
+			<input type="hidden" name="idx" value="${ param.idx }">
+		
 			<table border="1" width="700" align="center">
-				<caption>::: 새 글 쓰기 :::</caption>
+				<caption>::: 댓글 쓰기 :::</caption>
 				
 				<tr>
 					<td>제목</td>
