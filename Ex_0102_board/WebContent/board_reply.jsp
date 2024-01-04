@@ -1,3 +1,4 @@
+<!--  -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -22,6 +23,7 @@
 		<form name="f" method="post" action="reply.do">
 		
 			<input type="hidden" name="idx" value="${ param.idx }">
+			<input type="hidden" name="page" value="${ param.page }">
 		
 			<table border="1" width="700" align="center">
 				<caption>::: 댓글 쓰기 :::</caption>

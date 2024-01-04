@@ -55,7 +55,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   			#{content}, 
   			#{pwd}, 
   			#{ip}, 
-  			sysdate, 
+  			sysdate,
   			0, 
   			#{ref}, 
   			#{step}, 
@@ -69,6 +69,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   		update BOARD set del_info = -1
   		where idx=#{idx}
   	</update>
+  	<!-- 전체 게시글 수 조회 -->
+  	<select id="board_count" resultType="int">
+  		SELECT count(*)
+  		FROM BOARD
+  	</select>
 </mapper>
 
 

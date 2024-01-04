@@ -82,6 +82,13 @@ public class BoardDAO {
 		sqlSession.close();
 		return res;
 	}
+	//전체 게시글 수 가져오기
+	public int getRowTotal() {
+		SqlSession sqlSession = factory.openSession(true);
+		int cnt = sqlSession.selectOne("b.board_count");
+		sqlSession.close();
+		return cnt;
+	}
 }
 
 

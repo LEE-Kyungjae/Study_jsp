@@ -7,39 +7,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.BoardDAO;
-import vo.BoardVO;
+import dao.CommentDAO;
+import vo.CommentVO;
 
-/**
- * Servlet implementation class BoardInsAct
- */
-@WebServlet("/insert.do")
-public class BoardInsAct extends HttpServlet {
+@WebServlet("/comment_insert.do")
+public class CommInsAct extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// insert.do?subject=제목&name=홍길동&content=내용&pwd=1111
-
 		request.setCharacterEncoding("utf-8");
-
-		String ip = request.getRemoteAddr();
-		String subject = request.getParameter("subject");
+		int b_idx = Integer.parseInt(request.getParameter("b_idx"));
 		String name = request.getParameter("name");
 		String content = request.getParameter("content");
 		String pwd = request.getParameter("pwd");
-
-		BoardVO vo = new BoardVO();
-		vo.setIp(ip);
-		vo.setSubject(subject);
-		vo.setName(name);
-		vo.setContent(content);
+		String ip = request.getRemoteAddr();
+		CommentVO vo = new CommentVO();
+		vo.setB_idx(b_idx);
 		vo.setPwd(pwd);
-
-		BoardDAO.getInstance().insert(vo);
-
-		response.sendRedirect("list.do");
+		vo.setContent(content);
+		vo.setIp(ip);
+		vo.setName(name);
+		int res = CommentDAO.getInstance().insert(vo);
+		response.getWriter().print(res);
 
 	}
-
 }
